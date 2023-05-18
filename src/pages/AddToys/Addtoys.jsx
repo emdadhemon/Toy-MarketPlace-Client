@@ -1,23 +1,28 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-
+import Swal from 'sweetalert2';
 
 const Addtoys = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch("http://localhost:5000/add-toy", {
+        fetch("http://localhost:5000/toys", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data),
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result);
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your Toy data Has been Saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
             });
-        console.log(data);
     }
 
 
@@ -74,7 +79,7 @@ const Addtoys = () => {
                     <option value="spiderman">Spiderman</option>
                     <option value="Hulk">Hulk</option>
                     <option value="captainamerica">Captain America</option>
-                    <option value="captainamerica">Superman</option>
+                    <option value="superman">Superman</option>
                     <option value="wonderwomen">Wonderwomen</option>
                     <option value="batman">Batman</option>
                     <option value="theflash">TheFlash</option>
