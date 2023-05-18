@@ -5,7 +5,20 @@ import { useForm } from "react-hook-form";
 const Addtoys = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        fetch("http://localhost:5000/add-toy", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+            });
+        console.log(data);
+    }
 
 
 
@@ -36,6 +49,7 @@ const Addtoys = () => {
                     {...register("price")}
                     placeholder="price"
                     type='number'
+                    step="any"
                 /> <br />
                 <input
                     className='input border border-gray-800 w-[25%] m-2'
@@ -48,6 +62,7 @@ const Addtoys = () => {
                     {...register("quantity")}
                     placeholder="Available Quantity"
                     type='number'
+                    step="any"
                 /> <br />
 
                 <select className='input border border-gray-800 w-[25%] m-2' {...register("category")}>
@@ -72,7 +87,8 @@ const Addtoys = () => {
                     {...register("ratings")}
                     placeholder="Ratings"
                     type='number'
-                /> 
+                    step="any"
+                />
                 <input
                     className='input border border-gray-800 w-[35%] m-2'
                     {...register("details")}
