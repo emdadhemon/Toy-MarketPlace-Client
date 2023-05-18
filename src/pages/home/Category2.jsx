@@ -4,7 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import Toycard from './Toycard';
 
 
-const Category = () => {
+const Category2 = () => {
 
     const [toys, setToys] = useState([]);
     const [activeTab, setActiveTab] = useState("marvel");
@@ -13,7 +13,7 @@ const Category = () => {
         setActiveTab(category);
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/${activeTab}`)
+        fetch(`http://localhost:5000/toy/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setToys(result);
@@ -39,43 +39,21 @@ const Category = () => {
                         <Tab onClick={() => handleActivetab('dccomic')}>DC Comic</Tab>
                     </TabList>
                     <TabPanel>
-                        <Tabs forceRenderTabPanel>
-                            <TabList>
-                                <Tab onClick={() => handleActivetab('spiderman')}>Spiderman</Tab>
-                                <Tab onClick={() => handleActivetab('captainamerica')}>Captain America</Tab>
-                                <Tab onClick={() => handleActivetab('hulk')}>Hulk</Tab>
-                            </TabList>
-                            <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
-                                    {
-                                        toys.map((toy, index) => <Toycard
-                                            key={index}
-                                            toy={toy}
-                                        ></Toycard>)
-                                    }
-                                </div>
-                            </TabPanel>
-                            <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
-                                    {
-                                        toys.map((toy, index) => <Toycard
-                                            key={index}
-                                            toy={toy}
-                                        ></Toycard>)
-                                    }
-                                </div>
-                            </TabPanel>
-                            <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
-                                    {
-                                        toys.map((toy, index) => <Toycard
-                                            key={index}
-                                            toy={toy}
-                                        ></Toycard>)
-                                    }
-                                </div>
-                            </TabPanel>
-                        </Tabs>
+                        <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
+                            <button onClick={() => handleActivetab('spiderman')} className="btn">Spiderman</button>
+                            <button className="btn">Button</button>
+                            <button className="btn">Button</button>
+                        </div>
+                        <div>
+                            <div className='grid grid-cols-4 gap-4'>
+                                {
+                                    toys.map((toy, index) => <Toycard
+                                        key={index}
+                                        toy={toy}
+                                    ></Toycard>)
+                                }
+                            </div>
+                        </div>
                     </TabPanel>
                     <TabPanel>
                         <Tabs forceRenderTabPanel>
@@ -171,4 +149,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default Category2;
