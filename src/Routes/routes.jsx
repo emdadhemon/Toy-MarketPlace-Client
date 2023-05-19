@@ -5,6 +5,7 @@ import Addtoys from "../pages/AddToys/Addtoys";
 import Addtoys2 from "../pages/AddToys/Addtoys2";
 import SingleCardData from "../pages/SingleCardData/SingleCardData";
 import Alltoys from "../pages/Alltoys/Alltoys";
+import Login from "../pages/Login/Login";
 
 const route = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const route = createBrowserRouter([
             {
                 path : "addtoys2",
                 element : <Addtoys2></Addtoys2>
+            },
+            {
+                path : "login",
+                element : <Login></Login>
             },
             {
                 path : "/singledetails/:id",
