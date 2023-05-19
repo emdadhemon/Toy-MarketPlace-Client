@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Addtoys = () => {
+
+    const {user} = useContext(AuthContext)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -35,12 +38,14 @@ const Addtoys = () => {
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("sellername")}
                     placeholder="Your Name"
+                    value={user?.displayName}
                     type='text'
                 />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("selleremail")}
                     placeholder="Your Email"
+                    value={user?.email}
                     type='email'
                 /> <br />
 
