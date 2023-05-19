@@ -37,10 +37,10 @@ const Category = () => {
                             <TabList>
                                 <Tab onClick={() => handleActivetab('spiderman')}>Spiderman</Tab>
                                 <Tab onClick={() => handleActivetab('captainamerica')}>Captain America</Tab>
-                                <Tab onClick={() => handleActivetab('hulk')}>Hulk</Tab>
+                                <Tab onClick={() => handleActivetab('Hulk')}>Hulk</Tab>
                             </TabList>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -50,7 +50,7 @@ const Category = () => {
                                 </div>
                             </TabPanel>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -60,7 +60,7 @@ const Category = () => {
                                 </div>
                             </TabPanel>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -79,7 +79,7 @@ const Category = () => {
                                 <Tab onClick={() => handleActivetab('joker')}>Joker</Tab>
                             </TabList>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -89,7 +89,7 @@ const Category = () => {
                                 </div>
                             </TabPanel>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -99,7 +99,7 @@ const Category = () => {
                                 </div>
                             </TabPanel>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -118,7 +118,7 @@ const Category = () => {
                                 <Tab onClick={() => handleActivetab('superman')}>Superman</Tab>
                             </TabList>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -128,7 +128,7 @@ const Category = () => {
                                 </div>
                             </TabPanel>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}
@@ -138,7 +138,7 @@ const Category = () => {
                                 </div>
                             </TabPanel>
                             <TabPanel>
-                                <div className='grid grid-cols-4 gap-4'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4'>
                                     {
                                         toys.map((toy, index) => <Toycard
                                             key={index}

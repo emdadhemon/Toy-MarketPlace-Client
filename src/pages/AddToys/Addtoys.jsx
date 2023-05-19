@@ -16,12 +16,13 @@ const Addtoys = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Your Toy data Has been Saved',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
+                if(result.insertedId){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Your Toy data Has been Saved',
+                        confirmButtonText : "Ok"
+                      })
+                }
             });
     }
 
@@ -31,51 +32,51 @@ const Addtoys = () => {
         <div className='text-center'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
-                    className='input border border-gray-800 w-[25%] m-2'
+                    className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("sellername")}
                     placeholder="Your Name"
                     type='text'
                 />
                 <input
-                    className='input border border-gray-800 w-[25%] m-2'
+                    className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("selleremail")}
                     placeholder="Your Email"
                     type='email'
                 /> <br />
 
                 <input
-                    className='input border border-gray-800 w-[25%] m-2'
+                    className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("toyname")}
                     placeholder="Toy Name"
                     type='text'
                 />
                 <input
-                    className='input border border-gray-800 w-[25%] m-2'
+                    className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("price")}
                     placeholder="price"
                     type='number'
                     step="any"
                 /> <br />
                 <input
-                    className='input border border-gray-800 w-[25%] m-2'
+                    className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("photourl")}
                     placeholder="Photo URL"
                     type='text'
                 />
                 <input
-                    className='input border border-gray-800 w-[25%] m-2'
+                    className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("quantity")}
                     placeholder="Available Quantity"
                     type='number'
                     step="any"
                 /> <br />
 
-                <select className='input border border-gray-800 w-[25%] m-2' {...register("category")}>
+                <select className='input border border-gray-800 w-[25%] m-2 bg-white text-black' {...register("category")}>
                     <option value="marvel">Marvel</option>
                     <option value="batman">BatMan</option>
                     <option value="dccomics">DC Comics</option>
                 </select>
-                <select className='input border border-gray-800 w-[25%] m-2' {...register("subcategory")}>
+                <select className='input border border-gray-800 w-[25%] m-2 bg-white text-black' {...register("subcategory")}>
                     <option value="spiderman">Spiderman</option>
                     <option value="Hulk">Hulk</option>
                     <option value="captainamerica">Captain America</option>
@@ -88,14 +89,14 @@ const Addtoys = () => {
                 </select> <br />
 
                 <input
-                    className='input border border-gray-800 w-[15%] m-2'
+                    className='input border border-gray-800 w-[15%] m-2 bg-white text-black'
                     {...register("ratings")}
                     placeholder="Ratings"
                     type='number'
                     step="any"
                 />
                 <input
-                    className='input border border-gray-800 w-[35%] m-2'
+                    className='input border border-gray-800 w-[35%] m-2 bg-white text-black'
                     {...register("details")}
                     placeholder="Write someting about your toy..."
                     type='details'
@@ -104,7 +105,7 @@ const Addtoys = () => {
                 <br />
 
 
-                <input className='btn border border-gray-800 w-[51%] mt-4' type="submit" value="Add Toy" />
+                <input className='btn btn-success border border-gray-800 w-[51%] mt-4' type="submit" value="Add Toy" />
             </form>
         </div>
     );

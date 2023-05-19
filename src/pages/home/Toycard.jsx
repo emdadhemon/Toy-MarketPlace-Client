@@ -1,18 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Toycard = ({ toy }) => {
-    const { photourl, toyname, price, rating } = toy;
+    const { _id, photourl, toyname, price, ratings } = toy;
+
+
     return (
-        <div>
-            <div className="card h-80 bg-blue-300 ">
-                <figure>
-                    <img src={photourl} alt="Shoes" className="rounded-top-xl w-100 h-44 object-cover mt-2" />
-                </figure>
-                <div className="items-center text-center my-5 px-4">
-                    <h2 className="font-bold text-sm">{toyname}</h2>
-                    <p className='py-2 text-sm '> Price: {price}</p>
-                </div>
-                {/* <Link to={`/recipe/${recipe._id}`} className="text-center bg-success font-medium py-2 mt-auto hover:bg-green-700 hover:text-white">View Details</Link> */}
+        <div className="card grid grid-cols-2 items-center bg-black shadow-xl mt-4">
+            <img className='h-72 object-cover rounded-s-xl rounded-r-none' src={photourl} alt="Movie" />
+            <div className=" p-4 space-y-4">
+                <h2 className="card-title text-xl">{toyname}</h2>
+                <p>Price : ${price}</p>
+                <p>Ratings : {ratings}</p>
+                <Link to={`/singledetails/${_id}`} className='btn'>View Details</Link>
             </div>
         </div>
     );
