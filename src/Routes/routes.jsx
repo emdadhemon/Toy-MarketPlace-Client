@@ -24,7 +24,7 @@ const route = createBrowserRouter([
             {
                 path: "alltoys",
                 element: <Alltoys></Alltoys>,
-                loader: () => fetch('https://toy-marketplace-server-emdadhemon.vercel.app/toys')
+                loader: () => fetch('http://localhost:5000/toys')
             },
             {
                 path: "addtoys",
@@ -45,17 +45,17 @@ const route = createBrowserRouter([
             {
                 path: "/singledetails/:id",
                 element: <PrivateRoute><SingleCardData></SingleCardData></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/findone/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/findone/${params.id}`)
             },
             {
                 path : "updatetoy/:id",
                 element : <UpdateToys></UpdateToys>,
-                loader : ({ params }) => fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/findone/${params.id}`)
+                loader : ({ params }) => fetch(`http://localhost:5000/findone/${params.id}`)
             },
             {
                 path : "category/:name",
                 element : <Allcategorytoys></Allcategorytoys>,
-                loader : ({params}) => fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/toys/${params.name}`)
+                loader : ({params}) => fetch(`http://localhost:5000/toys/${params.name}`)
             }
         ]
     }

@@ -20,7 +20,7 @@ const Category = () => {
     }
 
     useEffect(() => {
-        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/findbysubcategory/${activeTab}`)
+        fetch(`http://localhost:5000/findbysubcategory/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setToys(result);

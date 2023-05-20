@@ -11,7 +11,7 @@ const UndateToys = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/updatetoy/${Toy._id}`, {
+        fetch(`http://localhost:5000/updatetoy/${Toy._id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),

@@ -11,13 +11,30 @@ const MyToys = () => {
     const [toys, setToys] = useState(null)
 
     useEffect(() => {
-        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/mytoys/${user?.email}`)
+        fetch(`http://localhost:5000/mytoys/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
                 setToys(data);
             });
     }, [user]);
+
+    const handleAscending = () => {
+        fetch(`http://localhost:5000/ascendingbyprice/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setToys(data);
+            });
+    }
+    const handleDescending = () => {
+        fetch(`http://localhost:5000/descendingbyprice/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setToys(data);
+            });
+    }
 
     const handleDelete = _id => {
         console.log(_id);
@@ -31,7 +48,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/toy/${_id}`, {
+                fetch(`http://localhost:5000/toy/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -55,25 +72,29 @@ const MyToys = () => {
 
     return (
         <div>
-            <div className="my-toys-container">
+            <div className="">
                 <h1 className="text-center text-2xl my-4 font-bold p-4 ">All My toys</h1>
+                <div className='flex justify-center mb-2'>
+                    <button onClick={handleAscending} className='btn mr-2'>price ascending</button>
+                    <button onClick={handleDescending} className='btn'>price Descending</button>
+                </div>
                 <div>
                     {
-                        toys?.map(toy => 
-                        <div key={toy?._id} className='w-[60%] mx-auto flex justify-between items-center h-full border mb-2 p-4 gap-4'>
-                            <div className='flex items-center w-[35%] gap-2'>
-                                <img src={toy?.photourl} className='h-20 w-20 rounded object-cover' alt="" />
-                                <div className='text-sm'>{toy?.toyname}</div>
+                        toys?.map(toy =>
+                            <div key={toy?._id} className='w-[60%] mx-auto flex justify-between items-center h-full border mb-2 p-4 gap-4'>
+                                <div className='flex items-center w-[35%] gap-2'>
+                                    <img src={toy?.photourl} className='h-20 w-20 rounded object-cover' alt="" />
+                                    <div className='text-sm'>{toy?.toyname}</div>
+                                </div>
+                                <div>
+                                    <h1 className='text-sm'>Price : ${toy?.price}</h1>
+                                    <h1 className='text-sm'>Quantity : {toy?.quantity}</h1>
+                                </div>
+                                <div className='f'>
+                                    <Link to={`/updatetoy/${toy?._id}`}><button to={`/singledetails/${toy?._id}`} className='btn btn-outline btn-info mr-2'><FaEdit></FaEdit></button></Link>
+                                    <button onClick={() => handleDelete(toy?._id)} className='btn btn-error'><FaTrash></FaTrash></button>
+                                </div>
                             </div>
-                            <div>
-                                <h1 className='text-sm'>Price : ${toy?.price}</h1>
-                                <h1 className='text-sm'>Quantity : {toy?.quantity}</h1>
-                            </div>
-                            <div className='f'>
-                                <Link to={`/updatetoy/${toy?._id}`}><button to={`/singledetails/${toy?._id}`} className='btn btn-outline btn-info mr-2'><FaEdit></FaEdit></button></Link>
-                                <button onClick={() => handleDelete(toy?._id)} className='btn btn-error'><FaTrash></FaTrash></button>
-                            </div>
-                        </div>
                         )
                     }
                 </div>

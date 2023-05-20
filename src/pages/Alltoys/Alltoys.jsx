@@ -7,7 +7,7 @@ const Alltoys = () => {
     const [toys, settoys] = useState([]);
     const [searchText, setSearchText] = useState('');
     useEffect(() => {
-        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/toys`)
+        fetch(`http://localhost:5000/toys`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -17,7 +17,7 @@ const Alltoys = () => {
 
       const handleSearch = (e) => {
         e.preventDefault();
-        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/searchtoysByText/${searchText}`)
+        fetch(`http://localhost:5000/searchtoysByText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
