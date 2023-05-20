@@ -1,14 +1,41 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 const UndateToys = () => {
-    const {user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    const Toy = useLoaderData()
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        console.log(data)
+        fetch(`http://localhost:5000/updatetoy/${Toy._id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.modifiedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Your Toy data succesfully updated',
+                        confirmButtonText : "Ok"
+                      })
+                }
+                console.log(result);
+            });
+    }
+
+
+
+
     return (
         <div className='text-center'>
-            <form>
-                <input
+            <form onSubmit={handleSubmit(onSubmit)}>
+                {/* <input
                     className='input border border-gray-800 w-[25%] hidden m-2 bg-white text-black'
                     {...register("sellername")}
                     placeholder="Your Name"
@@ -21,13 +48,15 @@ const UndateToys = () => {
                     placeholder="Your Email"
                     value={user?.email}
                     type='email'
-                /> <br />
+                /> <br /> */}
 
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("toyname")}
                     placeholder="Toy Name"
+                    defaultValue={Toy.toyname}
                     type='text'
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -35,12 +64,14 @@ const UndateToys = () => {
                     placeholder="price"
                     type='number'
                     step="any"
+                    required
                 /> <br />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("photourl")}
                     placeholder="Photo URL"
                     type='text'
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -48,6 +79,7 @@ const UndateToys = () => {
                     placeholder="Available Quantity"
                     type='number'
                     step="any"
+                    required
                 /> <br />
 
                 <select className='input border border-gray-800 w-[25%] m-2 bg-white text-black' {...register("category")}>
@@ -73,12 +105,14 @@ const UndateToys = () => {
                     placeholder="Ratings"
                     type='number'
                     step="any"
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[35%] m-2 bg-white text-black'
                     {...register("details")}
                     placeholder="Write someting about your toy..."
                     type='details'
+                    required
                 />
 
                 <br />
