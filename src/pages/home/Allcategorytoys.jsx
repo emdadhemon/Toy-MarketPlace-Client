@@ -9,7 +9,7 @@ const Allcategorytoys = () => {
     return (
         <div>
             <h1 className='text-3xl font-bold text-center my-5'>All {toys[0].category} Toys</h1>
-            <div className='grid grid-cols-4 gap-4 w-[85%] mx-auto my-11' >
+            <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 w-[85%] mx-auto my-11' >
                 {
                     toys?.map(toy => <div>
                         <div className="card h-72 bg-base-100 shadow-xl image-full">
