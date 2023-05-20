@@ -8,6 +8,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys/MyToys";
+import UpdateToys from "../pages/MyToys/UpdateToys";
+
 
 const route = createBrowserRouter([
     {
@@ -43,6 +45,11 @@ const route = createBrowserRouter([
                 path: "/singledetails/:id",
                 element: <PrivateRoute><SingleCardData></SingleCardData></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/findone/${params.id}`)
+            },
+            {
+                path : "updatetoy/:id",
+                element : <UpdateToys></UpdateToys>,
+                loader : ({ params }) => fetch(`http://localhost:5000/findone/${params.id}`)
             }
         ]
     }
