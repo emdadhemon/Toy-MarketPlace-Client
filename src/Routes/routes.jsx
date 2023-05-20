@@ -9,6 +9,7 @@ import Register from "../pages/Login/Register";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys/MyToys";
 import UpdateToys from "../pages/MyToys/UpdateToys";
+import Allcategorytoys from "../pages/home/Allcategorytoys";
 
 
 const route = createBrowserRouter([
@@ -23,7 +24,7 @@ const route = createBrowserRouter([
             {
                 path: "alltoys",
                 element: <Alltoys></Alltoys>,
-                loader: () => fetch('http://localhost:5000/toys')
+                loader: () => fetch('https://toy-marketplace-server-emdadhemon.vercel.app/toys')
             },
             {
                 path: "addtoys",
@@ -44,12 +45,17 @@ const route = createBrowserRouter([
             {
                 path: "/singledetails/:id",
                 element: <PrivateRoute><SingleCardData></SingleCardData></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/findone/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/findone/${params.id}`)
             },
             {
                 path : "updatetoy/:id",
                 element : <UpdateToys></UpdateToys>,
-                loader : ({ params }) => fetch(`http://localhost:5000/findone/${params.id}`)
+                loader : ({ params }) => fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/findone/${params.id}`)
+            },
+            {
+                path : "category/:name",
+                element : <Allcategorytoys></Allcategorytoys>,
+                loader : ({params}) => fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/toys/${params.name}`)
             }
         ]
     }

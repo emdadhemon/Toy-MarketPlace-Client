@@ -11,7 +11,7 @@ const MyToys = () => {
     const [toys, setToys] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/mytoys/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -31,7 +31,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toy/${_id}`, {
+                fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/toy/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -56,13 +56,13 @@ const MyToys = () => {
     return (
         <div>
             <div className="my-toys-container">
-                <h1 className="text-center text-4xl font-bold p-4 ">ALL My toys</h1>
+                <h1 className="text-center text-2xl my-4 font-bold p-4 ">All My toys</h1>
                 <div>
                     {
                         toys?.map(toy => 
                         <div key={toy?._id} className='w-[60%] mx-auto flex justify-between items-center h-full border mb-2 p-4 gap-4'>
                             <div className='flex items-center w-[35%] gap-2'>
-                                <img src={toy?.photourl} className='h-20 rounded object-cover' alt="" />
+                                <img src={toy?.photourl} className='h-20 w-20 rounded object-cover' alt="" />
                                 <div className='text-sm'>{toy?.toyname}</div>
                             </div>
                             <div>

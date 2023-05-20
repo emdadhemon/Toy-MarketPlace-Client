@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import logo from "../../assets/logo.png"
+import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
 
@@ -12,7 +14,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='bg-gray-900'>
+        <div className='bg-gray-900 py-2'>
             <div className='navbar w-[85%] mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -23,30 +25,40 @@ const Navbar = () => {
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
                             <li><Link to="/alltoys">All Toys</Link></li>
-                            <li><Link to="/addtoys">Add Toy</Link></li>
                             {
-                                user ?
-                                    <li><Link to="/mytoys">MyToys</Link></li>: ""
+                                user ? <><li><Link to="/addtoys">Add A Toy</Link></li><li><Link to='/mytoys'>MyToys</Link></li></>
+                                    : ""
                             }
+                            <li><Link to="/blog">Blogs</Link></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <Link to="/"><img className='h-12 hover:bg-black' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/alltoys">All Toys</Link></li>
-                        <li><Link to="/addtoys">Add Toy</Link></li>
+
+
                         {
-                            user ?
-                                <li><Link to='/mytoys'>MyToys</Link></li> : ""
+                            user ? <><li><Link to="/addtoys">Add A Toy</Link></li><li><Link to='/mytoys'>MyToys</Link></li></>
+                                : ""
                         }
+                        <li><Link to="/blog">Blogs</Link></li>
+
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <Link onClick={handleLogout} className="btn">Logout</Link> : <Link to="/login" className="btn">LogIn</Link>
+                        !user && <Link to="/signup" className="btn bg-[#f98daa] hidden lg:block lg:pt-4 text-white mr-4">Register</Link>
+                    }
+                    {
+                        user ? <Link onClick={handleLogout} className="btn text-white bg-[#f98daa] mr-3">Logout</Link> : <Link to="/login" className="btn text-white bg-[#f98daa] mr-3">Login</Link>
+                    }
+                    {user?.photoURL && <img title={user?.displayName} className="w-10 rounded-full" src={user.photoURL} />}
+                    {
+                        user?.photoURL === null && <FaUserCircle title={user?.displayName} style={{ fontSize: "40px" }}></FaUserCircle>
                     }
                 </div>
             </div>

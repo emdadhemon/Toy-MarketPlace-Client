@@ -6,7 +6,7 @@ const Alltoytabular = ({ toy }) => {
     return (
         <div className='flex justify-between items-center h-full border mb-2 p-4 gap-4'>
             <div className='flex items-center w-[35%] gap-2'>
-                <img src={photourl} className='h-20 rounded object-cover' alt="" />
+                <img src={photourl} className='h-20 w-20 rounded object-cover' alt="" />
                 <div className='text-sm'>{toyname}</div>
             </div>
             <div>

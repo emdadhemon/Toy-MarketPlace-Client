@@ -5,9 +5,9 @@ import Alltoytabular from './Alltoytabular';
 const Alltoys = () => {
     // const toys = useLoaderData();
     const [toys, settoys] = useState([]);
-    const [searchText, setSearchText] = useState("");
+    const [searchText, setSearchText] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:5000/toys`)
+        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/toys`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -15,8 +15,9 @@ const Alltoys = () => {
           });
       }, []);
 
-      const handleSearch = () => {
-        fetch(`http://localhost:5000/searchtoysByText/${searchText}`)
+      const handleSearch = (e) => {
+        e.preventDefault();
+        fetch(`https://toy-marketplace-server-emdadhemon.vercel.app/searchtoysByText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -27,10 +28,10 @@ const Alltoys = () => {
     console.log(toys)
     return (
         <div className='w-[80%] mx-auto mt-12'>
-            <div className='mb-4'>
+            <form onSubmit={handleSearch} className='mb-4'>
                 <input onChange={(e) => setSearchText(e.target.value)} className='input w-[35%] bg-white text-black mr-2' type="text" name="name" placeholder='Search Your Product' id="" />
-                <input onClick={handleSearch} className='btn ' type="submit" value="Search" />
-            </div>
+                <input className='btn ' type="submit" value="Search" />
+            </form>
             <div>
                 {
                     toys.map(toy => <Alltoytabular key={toy._id} toy={toy}> </Alltoytabular>)

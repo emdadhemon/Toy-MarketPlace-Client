@@ -1,0 +1,30 @@
+import React from 'react';
+import { useLoaderData, Link } from 'react-router-dom';
+
+
+const Allcategorytoys = () => {
+
+    const toys = useLoaderData()
+    console.log(toys)
+    return (
+        <div>
+            <h1 className='text-3xl font-bold text-center my-5'>All {toys[0].category} Toys</h1>
+            <div className='grid grid-cols-4 gap-4 w-[85%] mx-auto my-11' >
+                {
+                    toys?.map(toy => <div>
+                        <div className="card h-72 bg-base-100 shadow-xl image-full">
+                            <figure><img className='h-full w-full object-cover' src={toy?.photourl} /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title text-white text-3xl font-bold">{toy?.toyname}</h2>
+                                <p className='text-white text-sm'>Price : ${toy?.price}</p>
+                                <Link to={`/singledetails/${toy?._id}`} className='btn bg-pink-500 border-none'>View Details</Link>
+                            </div>
+                        </div>
+                    </div>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default Allcategorytoys;
