@@ -4,8 +4,11 @@ import UndateToys from './UpdateToys';
 import { Link } from 'react-router-dom';
 import { FaEdit, FaRemoveFormat, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useTitle from '../../Title/Title';
 
 const MyToys = () => {
+
+    useTitle("My toys")
     const { user } = useContext(AuthContext)
 
     const [toys, setToys] = useState(null)

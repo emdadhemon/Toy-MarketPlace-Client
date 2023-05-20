@@ -12,7 +12,7 @@ const Allcategorytoys = () => {
             <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 w-[85%] mx-auto my-11' >
                 {
                     toys?.map(toy => <div>
-                        <div className="card h-72 bg-base-100 shadow-xl image-full">
+                        <div className="card h-80 bg-base-100 shadow-xl image-full">
                             <figure><img className='h-full w-full object-cover' src={toy?.photourl} /></figure>
                             <div className="card-body">
                                 <h2 className="card-title text-white text-3xl font-bold">{toy?.toyname}</h2>

@@ -3,8 +3,11 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../Title/Title';
+import login from "../../assets/login.jpg"
 
 const Register = () => {
+    useTitle('Register')
 
     const { createUser, signInWithGoogle, signInWithGithub, } = useContext(AuthContext);
 
@@ -75,7 +78,9 @@ const Register = () => {
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold text-center mb-6"> Register Now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card lg:grid grid-cols-2 w-full  shadow-2xl bg-base-100">
+                        <img className='lg:rounded-s-xl h-full w-full' src={login} alt="" />
+                        <div>
                         <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -112,6 +117,7 @@ const Register = () => {
                         </form>
                         <div className='w-[85%] mx-auto mb-4'>
                             <button onClick={handleGoogleSignIn} className="w-[100%] btn btn-outline text-black hover:bg-red-400 hover:border-red-400  font-semibold mb-2"><FaGoogle style={{ color: 'skyblue' }}></FaGoogle><span className='ms-2'>Sign up with Google</span></button>
+                        </div>
                         </div>
                     </div>
                 </div>

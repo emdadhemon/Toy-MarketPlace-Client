@@ -6,24 +6,55 @@ import second from "../../assets/2.jpg";
 import { Link } from 'react-router-dom';
 import banner from "../../assets/banner.jpg"
 
+import Typewritter from 'typewriter-effect';
+
 const Banner = () => {
     return (
-        <div style={{backgroundImage:`url(${banner})`, backgroundPosition:"center", backgroundSize:"cover"}} className='flex justify-between gap-6 p-6 items-center '>
-            <div className='w-1/2'>
-                <h1 className='text-6xl font-bold text-white mb-4'>Welcome</h1>
-                <p className='text-md text-white mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis recusandae ea odit et hic fugit veniam sed id. Veniam, animi! Molestiae debitis velit sint, nam culpa est rerum laudantium?</p>
-                <Link className='bg-white px-16 py-3 hover:bg-red-800 text-white'>Shop Now</Link>
-            </div>
-            <div className='w-[60%] border-4'>
-                <Carousel className='text-center' showThumbs={false} emulateTouch>
-                    <div className='relative'>
-                        <img src={first} className='object-cover object-right-bottom' />
+        <div className='mt-2 h-96 flex items-center'>
+
+            <Carousel className='text-center w-full' showThumbs={false} emulateTouch>
+                <div className='relative'>
+                    <img src={first} className='object-cover object-center h-96' />
+                    <div className="carousel-caption absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                        <h1 className='font-bold text-5xl text-white '>
+                            <Typewritter options={
+                                {
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 50,
+                                    strings: "Welcome To Kidpalace"
+                                }
+                            }>
+
+                            </Typewritter>
+                        </h1>
+                        <p className="lg:text-md sm:text-sm mt-6">
+                            Quality and freshness come first. Our mission is to provide our <br /> customers with the finest selection of locally sourced and globally inspired food products, all at competitive prices.</p>
                     </div>
-                    <div className='relative'>
-                        <img src={second} className='object-cover object-bottom' />
+                </div>
+                <div className='relative'>
+                    <img src={second} className='object-cover object-center h-96' />
+                    <div className="carousel-caption absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                        <h1 className='font-bold text-5xl text-[#147970] '>
+                            <Typewritter options={
+                                {
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 50,
+                                    strings: "Welcome To Kidpalace"
+                                }
+                            }>
+
+                            </Typewritter>
+                        </h1>
+                        <p className="lg:text-md sm:text-sm mt-6">
+                            Quality and freshness come first. Our mission is to provide our <br /> customers with the finest selection of locally sourced and globally inspired food products, all at competitive prices.</p>
                     </div>
-                </Carousel>
-            </div>
+                </div>
+            </Carousel>
+
+
+
         </div>
     );
 };

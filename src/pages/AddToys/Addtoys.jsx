@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../Title/Title';
 
 const Addtoys = () => {
+
+    useTitle("Add a toy")
 
     const {user} = useContext(AuthContext)
 

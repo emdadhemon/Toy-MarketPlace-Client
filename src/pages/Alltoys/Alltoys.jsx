@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Alltoytabular from './Alltoytabular';
+import useTitle from '../../Title/Title';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Alltoys = () => {
-    // const toys = useLoaderData();
+
+  useTitle('All Toys')
+
     const [toys, settoys] = useState([]);
     const [searchText, setSearchText] = useState('');
     useEffect(() => {

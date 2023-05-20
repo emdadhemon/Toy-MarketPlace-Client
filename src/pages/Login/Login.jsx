@@ -3,9 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Providers/AuthProvider';
 import login from "../../assets/login.jpg"
+import useTitle from '../../Title/Title';
 
 const Login = () => {
-
+    useTitle('Login')
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
