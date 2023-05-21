@@ -1,8 +1,16 @@
 import React from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Allcategorytoys = () => {
+
+    const handleViewdetails =() => {
+        if(!user){
+            toast("You have to log in first to view details")
+        }
+    }
+
 
     const toys = useLoaderData()
     console.log(toys)
@@ -17,7 +25,7 @@ const Allcategorytoys = () => {
                             <div className="card-body">
                                 <h2 className="card-title text-white text-xl font-bold">{toy?.toyname}</h2>
                                 <p className='text-white text-sm'>Price : ${toy?.price}</p>
-                                <Link to={`/singledetails/${toy?._id}`} className='btn  hover:text-white hover:bg-yellow-600  bg-[#fcbd02]  text-[#333333] border-none'>View Details</Link>
+                                <Link onClick={handleViewdetails} to={`/singledetails/${toy?._id}`} className='btn  hover:text-white hover:bg-yellow-600  bg-[#fcbd02]  text-[#333333] border-none'>View Details</Link>
                             </div>
                         </div>
                     </div>)

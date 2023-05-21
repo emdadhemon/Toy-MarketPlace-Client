@@ -27,6 +27,13 @@ const Alltoys = () => {
       });
   };
 
+  const handleViewdetails =() => {
+    if(!user){
+        toast("You have to log in first to view details")
+    }
+}
+
+
   console.log(toys)
   return (
     <div className='w-[80%] mx-auto my-10'>
@@ -52,7 +59,7 @@ const Alltoys = () => {
               <td>{toy.sellername} <br /> {toy.selleremail}</td>
               <td>Price : $
                 {toy.price} <br /> Quantity : {toy.quantity}</td>
-              <td><Link to={`/singledetails/${toy?._id}`} className='btn hover:bg-yellow-600 bg-[#fcbd02] border-none text-[#333333] hover:text-white'>View Details</Link></td>
+              <td><Link onClick={handleViewdetails} to={`/singledetails/${toy?._id}`} className='btn hover:bg-yellow-600 bg-[#fcbd02] border-none text-[#333333] hover:text-white'>View Details</Link></td>
             </tr>)
           }
 
