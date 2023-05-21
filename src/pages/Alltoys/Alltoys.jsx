@@ -12,7 +12,7 @@ const Alltoys = () => {
     const [toys, settoys] = useState([]);
     const [searchText, setSearchText] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:5000/toys`)
+        fetch(`https://toy-marketplace-server-ruddy.vercel.app/toys`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -22,7 +22,7 @@ const Alltoys = () => {
 
       const handleSearch = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/searchtoysByText/${searchText}`)
+        fetch(`https://toy-marketplace-server-ruddy.vercel.app/searchtoysByText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from "../../assets/logo.png"
+import { FaMapMarkedAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <footer className=" footer bg-zinc-800 p-10  text-white">
             <div className='footer justify-between w-[80%] mx-auto'>
                 <div>
-                    <img src={logo} alt="" />
-                    <p className='mt-2'>Happy Hues Industries Ltd.<br />Providing reliable toys since 1992</p>
+                    <img className='w-40' src={logo} alt="" />
+                    <p className="">Kid Industries Ltd.<br />Providing reliable toys since 1992</p>
+                    <p className="flex items-center"> <FaMapMarkerAlt className='mr-2'></FaMapMarkerAlt> 41/25, Block-C, Road-1, Chanmia Housing</p>
                 </div>
                 <div>
                     <span className="footer-title">Services</span>

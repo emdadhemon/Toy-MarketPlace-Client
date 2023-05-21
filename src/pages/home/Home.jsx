@@ -3,17 +3,20 @@ import Banner from '../shared/Banner';
 import Category from './Category';
 import Gallery from './Gallery';
 import useTitle from '../../Title/Title';
-import Services from '../Services';
+import Services from './Services';
+import ContactUs from './ContactUs';
+
 
 
 const Home = () => {
     useTitle("Home")
     return (
-        <div className='bg-[#dfdfe0] w-[90%] mx-auto'>
+        <div className=' w-[90%] mx-auto'>
             <Banner></Banner>
             <Gallery></Gallery>
             <Category></Category>
             <Services></Services>
+            <ContactUs></ContactUs>
         </div>
     );
 };

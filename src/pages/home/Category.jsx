@@ -20,7 +20,7 @@ const Category = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/findbysubcategory/${activeTab}`)
+        fetch(`https://toy-marketplace-server-ruddy.vercel.app/findbysubcategory/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setToys(result);
@@ -29,7 +29,7 @@ const Category = () => {
 
 
     return (
-        <div className='mt-24 pb-28' data-aos="fade-left">
+        <div className='mt-24 pb-20' data-aos="fade-left">
             <h1 className='text-center text-3xl font-bold mb-12'>Shop By Category</h1>
             <div className='p-10'>
                 <Tabs defaultIndex={0}>
@@ -43,9 +43,9 @@ const Category = () => {
                                 <Tab onClick={() => handleActivetab('captainamerica')}>Captain America</Tab>
                                 <Tab onClick={() => handleActivetab('Hulk')}>Hulk</Tab>
                                 <Tab onClick={() => handleActivetab('aquaman')}>Aquaman</Tab>
-                                <Tab onClick={() => handleActivetab('wonderwomen')}>Wonder Woman</Tab>
+                                <Tab onClick={() => handleActivetab('wonderwomen')}>Wonder Women</Tab>
                                 <Tab onClick={() => handleActivetab('superman')}>Superman</Tab>
-                                <Tab onClick={() => handleActivetab('theflash')}>The flash</Tab>
+                                <Tab onClick={() => handleActivetab('theflash')}>The Flash</Tab>
                                 <Tab onClick={() => handleActivetab('batman')}>Batman</Tab>
                                 <Tab onClick={() => handleActivetab('joker')}>Joker</Tab>
                             </TabList>

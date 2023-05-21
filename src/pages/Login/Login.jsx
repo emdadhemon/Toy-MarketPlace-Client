@@ -42,11 +42,11 @@ const Login = () => {
     }
 
     return (
-        <div className='w-[80%] mx-auto'>
+        <div className='w-[80%] mx-auto mb-12'>
             <div className="text-center">
                 <h1 className="text-5xl font-bold my-6">Login now!</h1>
             </div>
-            <div className='card rounded-xl lg:grid grid-cols-2 shadow shadow-gray-400'>
+            <div className='card rounded-xl lg:grid grid-cols-2 shadow '>
                 <img className='lg:rounded-s-xl h-full w-full' src={login} alt="" />
                 <div className=''>
                     <form onSubmit={handleLogin} className="card-body">

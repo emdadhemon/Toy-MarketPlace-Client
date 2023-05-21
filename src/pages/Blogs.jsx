@@ -4,15 +4,15 @@ import useTitle from '../Title/Title';
 const Blogs = () => {
     useTitle("Blogs")
     return (
-        <div className='w-[80%] mx-auto '>
+        <div className='w-[80%] mx-auto pb-8 '>
             <h1 className='text-4xl font-bold text-center my-6'>FAQ</h1>
             <div>
                 <div className="collapse">
                     <input type="checkbox" className="peer" />
-                    <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-title bg-[#147970] text-primary-content peer-checked:bg-[#147970]peer-checked:text-secondary-content">
                         <strong>Question : </strong>What is an access token and refresh token? How do they work and where should we store them on the client-side?
                     </div>
-                    <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-content bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <p>
                             <strong>Ans :</strong> <br /> <strong>Access Token : </strong> An access token is a credential that is used to access protected resources on behalf of a user or an application.  <br />  <p className='mb-2 mt-1'>Access tokens are typically short-lived and should be stored in a secure and non-persistent manner. One common approach is to store the access token in memory or a secure storage mechanism provided by the operating system or programming language. Examples include session storage or a token management library.</p>
                             <strong>Refresh Token : </strong> A refresh token is a credential that is used to obtain a new access token without requiring the user to log in again. While access tokens have a limited lifespan, refresh tokens are typically long-lived and can be used to request new access tokens whenever the current one expires. Refresh tokens are securely stored on the client-side. <br />  <p > Refresh tokens are long-lived and should be stored securely to prevent unauthorized access. They are commonly stored in a secure HTTP-only cookie, which ensures that the token is only accessible to the server. The cookie should have the secure and SameSite attributes enabled to prevent cross-site request forgery (CSRF) attacks.</p>
@@ -21,10 +21,10 @@ const Blogs = () => {
                 </div>
                 <div className="collapse border mt-2">
                     <input type="checkbox" className="peer" />
-                    <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-title bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <strong>Question : </strong>Compare SQL and NoSQL databases?
                     </div>
-                    <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-content bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <ul className='list-disc ps-4'>
                             <li> SQL databases are relational, and NoSQL databases are non-relational.</li>
                             <li>SQL databases use structured query language (SQL) and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data.
@@ -41,10 +41,10 @@ const Blogs = () => {
                 </div>
                 <div className="collapse border mt-2">
                     <input type="checkbox" className="peer" />
-                    <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-title bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <strong>Question : </strong>Compare SQL and NoSQL databases?
                     </div>
-                    <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-content bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <p><strong>Ans : </strong> <br />
                             <strong>Express js : </strong> Express.js is a popular web application framework for Node.js. It is a minimal and flexible framework that provides a simple set of features for building web applications and APIs. Express.js allows developers to create server-side applications using JavaScript and provides a robust set of HTTP utility methods and middleware.
                         </p>
@@ -55,10 +55,10 @@ const Blogs = () => {
                 </div>
                 <div className="collapse border mt-2">
                     <input type="checkbox" className="peer" />
-                    <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-title bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <strong>Question : </strong>What is express js? What is Nest JS ?
                     </div>
-                    <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                    <div className="collapse-content bg-[#147970] text-primary-content peer-checked:bg-[#147970] peer-checked:text-secondary-content">
                         <p>
                             <strong>Ans : </strong>
                             <span>MongoDB's Aggregation Framework is a powerful tool for data processing and analysis within MongoDB. It allows you to perform complex data transformations, aggregations, and computations on the data stored in your MongoDB collections.</span>

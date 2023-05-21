@@ -24,7 +24,7 @@ const Toycard = ({ toy }) => {
                 <h2 className="card-title text-xl">{toyname}</h2>
                 <p>Price : ${price}</p>
                 <p>Ratings : {ratings}</p>
-                <Link onClick={handleViewdetails} to={`/singledetails/${_id}`} className='btn bg-[#fcbd02] border-none text-[#333333]'>View Details</Link>
+                <Link onClick={handleViewdetails} to={`/singledetails/${_id}`} className='btn bg-[#fcbd02] hover:bg-yellow-600 hover:text-white  border-none text-[#333333]'>View Details</Link>
             </div>
         </div>
     );
