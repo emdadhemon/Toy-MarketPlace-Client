@@ -72,10 +72,9 @@ const MyToys = () => {
         })
     }
 
-
     return (
         <div>
-            <div className="">
+            <div className="my-8">
                 <h1 className="text-center text-2xl my-4 font-bold p-4 ">All My toys</h1>
                 <div className='flex justify-center mb-2'>
                     <button onClick={handleAscending} className='btn mr-2'>price ascending</button>
@@ -84,7 +83,7 @@ const MyToys = () => {
                 <div>
                     {
                         toys?.map(toy =>
-                            <div key={toy?._id} className='w-[60%] mx-auto flex justify-between items-center h-full border mb-2 p-4 gap-4'>
+                            <div key={toy?._id} className='w-[60%] border-zinc-900 mx-auto flex justify-between items-center h-full border mb-2 p-4 gap-4'>
                                 <div className='flex items-center w-[35%] gap-2'>
                                     <img src={toy?.photourl} className='h-20 w-20 rounded object-cover' alt="" />
                                     <div className='text-sm'>{toy?.toyname}</div>
@@ -94,7 +93,7 @@ const MyToys = () => {
                                     <h1 className='text-sm'>Quantity : {toy?.quantity}</h1>
                                 </div>
                                 <div className='f'>
-                                    <Link to={`/updatetoy/${toy?._id}`}><button to={`/singledetails/${toy?._id}`} className='btn btn-outline btn-info mr-2'><FaEdit></FaEdit></button></Link>
+                                    <Link to={`/updatetoy/${toy?._id}`}><button to={`/singledetails/${toy?._id}`} className='btn mr-2'><FaEdit></FaEdit></button></Link>
                                     <button onClick={() => handleDelete(toy?._id)} className='btn btn-error'><FaTrash></FaTrash></button>
                                 </div>
                             </div>

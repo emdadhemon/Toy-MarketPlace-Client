@@ -11,6 +11,7 @@ const Addtoys = () => {
     const {user} = useContext(AuthContext)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    
     const onSubmit = data => {
         fetch("https://toy-marketplace-server-ruddy.vercel.app/toys", {
             method: "POST",
@@ -35,7 +36,8 @@ const Addtoys = () => {
 
 
     return (
-        <div className='text-center'>
+        <div className='text-center my-8'>
+            <h1 className='font-bold text-3xl my-4'>Add A Toy</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -43,6 +45,7 @@ const Addtoys = () => {
                     placeholder="Your Name"
                     value={user?.displayName}
                     type='text'
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -50,6 +53,7 @@ const Addtoys = () => {
                     placeholder="Your Email"
                     value={user?.email}
                     type='email'
+                    required
                 /> <br />
 
                 <input
@@ -57,6 +61,7 @@ const Addtoys = () => {
                     {...register("toyname")}
                     placeholder="Toy Name"
                     type='text'
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -64,12 +69,14 @@ const Addtoys = () => {
                     placeholder="price"
                     type='number'
                     step="any"
+                    required
                 /> <br />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
                     {...register("photourl")}
                     placeholder="Photo URL"
                     type='text'
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -77,6 +84,7 @@ const Addtoys = () => {
                     placeholder="Available Quantity"
                     type='number'
                     step="any"
+                    required
                 /> <br />
 
                 <select className='input border border-gray-800 w-[25%] m-2 bg-white text-black' {...register("category")}>
@@ -102,12 +110,14 @@ const Addtoys = () => {
                     placeholder="Ratings"
                     type='number'
                     step="any"
+                    required
                 />
                 <input
                     className='input border border-gray-800 w-[35%] m-2 bg-white text-black'
                     {...register("details")}
                     placeholder="Write someting about your toy..."
                     type='details'
+                    required
                 />
 
                 <br />

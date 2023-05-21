@@ -17,7 +17,7 @@ const Allcategorytoys = () => {
                             <div className="card-body">
                                 <h2 className="card-title text-white text-xl font-bold">{toy?.toyname}</h2>
                                 <p className='text-white text-sm'>Price : ${toy?.price}</p>
-                                <Link to={`/singledetails/${toy?._id}`} className='btn  hover:text-white  bg-[#fcbd02]  text-[#333333] border-none'>View Details</Link>
+                                <Link to={`/singledetails/${toy?._id}`} className='btn  hover:text-white hover:bg-yellow-600  bg-[#fcbd02]  text-[#333333] border-none'>View Details</Link>
                             </div>
                         </div>
                     </div>)

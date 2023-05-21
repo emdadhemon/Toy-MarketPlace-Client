@@ -19,6 +19,7 @@ const Register = () => {
     const from = location.state?.from?.pathname || '/';
 
     const handleRegister = event => {
+        
         event.preventDefault()
 
         const form = event.target;

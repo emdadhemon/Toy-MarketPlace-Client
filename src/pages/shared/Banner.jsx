@@ -12,10 +12,10 @@ const Banner = () => {
     return (
         <div className='mt-2'>
 
-            <Carousel className='text-center w-full' showThumbs={false} emulateTouch>
+            <Carousel className='text-center w-full ' showThumbs={false} emulateTouch>
                 <div className='relative'>
                     <img src={first} className='object-cover object-center h-96 ' />
-                    <div className="absolute rounded-xl flex justify-center items-center h-full top-0 bg-gradient-to-r from-[#3f3f3f] to-[rgba(21, 21, 21, 0)]">
+                    <div className="absolute flex justify-center items-center h-full top-0 bg-gradient-to-r from-[#3f3f3f] to-[rgba(21, 21, 21, 0)]">
                         <div className='text-white text-left w-3/4'>
                             <h1 className='font-bold text-5xl text-white mb-4 '>
                                 <Typewritter options={
@@ -38,7 +38,7 @@ const Banner = () => {
                 </div>
                 <div className='relative'>
                     <img src={second} className='object-cover object-center h-96' />
-                    <div className="absolute rounded-xl flex justify-center items-center h-full top-0 bg-gradient-to-r from-[#3f3f3f] to-[rgba(21, 21, 21, 0)]">
+                    <div className="absolute flex justify-center items-center h-full top-0 bg-gradient-to-r from-[#3f3f3f] to-[rgba(21, 21, 21, 0)]">
                         <div className='text-white text-left w-3/4'>
                             <h1 className='font-bold text-5xl text-white mb-4 '>
                                 <Typewritter options={

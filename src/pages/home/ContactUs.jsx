@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <div className='text-center py-8 bg-[#147970] mb-2'>
-            <h1 className='text-4xl font-bold py-8 text-white'>Get In Touch</h1>
+            <h1 className='text-4xl font-bold py-8 text-white'>Contact Us</h1>
             <div className='border inline-block w-3/4 p-8'>
                 <input className='w-3/4 rounded-xl py-3 mb-2 ps-2' type="Text" placeholder='Your Name' /> <br />
                 <input className='w-3/4 rounded-xl py-3 mb-3 ps-2' type="Email" placeholder='Your Email' /> <br />

@@ -6,7 +6,7 @@ const SingleCardData = () => {
     const { photourl, toyname, sellername, selleremail, price, ratings, quantity, details } = toydetail;
     console.log(toydetail)
     return (
-        <div className='w-[80%] mx-auto'>
+        <div className='w-[80%] mx-auto my-6'>
             <h1 className='text-3xl font-bold text-center my-10'>Single card Details</h1>
             <div className="card  lg:card-side grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 border border-x-teal-50  bg-base-100 shadow shadow-slate-500">
 

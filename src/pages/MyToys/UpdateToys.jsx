@@ -33,22 +33,9 @@ const UndateToys = () => {
 
 
     return (
-        <div className='text-center'>
+        <div className='text-center my-4'>
+            <h1 className='text-3xl font-bold my-4'>Update A Toy</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {/* <input
-                    className='input border border-gray-800 w-[25%] hidden m-2 bg-white text-black'
-                    {...register("sellername")}
-                    placeholder="Your Name"
-                    value={user?.displayName}
-                    type='text'
-                />
-                <input
-                    className='input border border-gray-800 w-[25%] hidden m-2 bg-white text-black'
-                    {...register("selleremail")}
-                    placeholder="Your Email"
-                    value={user?.email}
-                    type='email'
-                /> <br /> */}
 
                 <input
                     className='input border border-gray-800 w-[25%] m-2 bg-white text-black'
@@ -114,10 +101,7 @@ const UndateToys = () => {
                     type='details'
                     required
                 />
-
                 <br />
-
-
                 <input className='btn btn-success border border-gray-800 w-[51%] mt-4' type="submit" value="Update Toy" />
             </form>
         </div>

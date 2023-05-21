@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Alltoytabular from './Alltoytabular';
 import useTitle from '../../Title/Title';
 import { Link } from 'react-router-dom';
 
@@ -52,7 +50,8 @@ const Alltoys = () => {
               <th><img className='h-20 w-20 rounded object-cover' src={toy?.photourl} alt="" /></th>
               <th>{toy.toyname}</th>
               <td>{toy.sellername} <br /> {toy.selleremail}</td>
-              <td>Price :{toy.price} <br /> Quantity : {toy.quantity}</td>
+              <td>Price : $
+                {toy.price} <br /> Quantity : {toy.quantity}</td>
               <td><Link to={`/singledetails/${toy?._id}`} className='btn hover:bg-yellow-600 bg-[#fcbd02] border-none text-[#333333] hover:text-white'>View Details</Link></td>
             </tr>)
           }

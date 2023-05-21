@@ -18,9 +18,9 @@ const Toycard = ({ toy }) => {
 
 
     return (
-        <div className="card grid grid-cols-2 items-center bg-white shadow-xl mt-4">
-            <img className='h-72 w-60 object-cover rounded-s-xl rounded-r-none' src={photourl} alt="Movie" />
-            <div className="p-2 space-y-4">
+        <div className="card grid grid-cols-1 bg-slate-300 lg:grid-cols-2 border items-center shadow drop-shadow-md mt-4">
+            <img className='lg:h-72 h-full lg:w-60 w-full object-cover lg:rounded-s-xl rounded-r-none' src={photourl} alt="Movie" />
+            <div className="p-4 lg:p-0 space-y-4">
                 <h2 className="card-title text-xl">{toyname}</h2>
                 <p>Price : ${price}</p>
                 <p>Ratings : {ratings}</p>
