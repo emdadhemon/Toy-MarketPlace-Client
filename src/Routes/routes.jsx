@@ -12,7 +12,7 @@ import UpdateToys from "../pages/MyToys/UpdateToys";
 import Allcategorytoys from "../pages/home/Allcategorytoys";
 import Blogs from "../pages/Blogs";
 import Error from "../layout/Error";
-import ErrorPage from "../pages/shared/ErrorPage";
+import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 
 
 const route = createBrowserRouter([
