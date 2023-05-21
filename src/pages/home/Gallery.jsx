@@ -17,7 +17,7 @@ const Gallery = () => {
             <h1 className='text-4xl font-bold text-center my-10'>Toys Gallery</h1>
             <div className='grid grid-cols-1 lg:grid-cols-3  gap-4 justify-between '>
                 <Link to='/category/marvel'>
-                    <div className="card w-full h-72 bg-base-100 hover:shadow-xl hover:shadow-zinc-400 shadow-xl image-full"  data-aos="fade-left" >
+                    <div className="card w-full h-80 bg-base-100 hover:shadow-xl hover:shadow-zinc-400 shadow-xl image-full"  data-aos="fade-left" >
                         <figure><img src={marvel} /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-white text-3xl font-bold">MARVEL</h2>
@@ -26,7 +26,7 @@ const Gallery = () => {
                     </div>
                 </Link>
                 <Link to="/category/batman">
-                    <div className="card w-full h-72 hover:shadow-xl hover:shadow-zinc-400  bg-base-100 shadow-xl image-full" data-aos="fade-bottom">
+                    <div className="card w-full h-80 hover:shadow-xl hover:shadow-zinc-400  bg-base-100 shadow-xl image-full" data-aos="fade-bottom">
                         <figure><img src={batman} /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-white text-3xl font-bold">BATMAN</h2>
@@ -35,7 +35,7 @@ const Gallery = () => {
                     </div>
                 </Link>
                 <Link to='/category/dccomics'>
-                    <div className="card w-full hover:shadow-xl hover:shadow-zinc-400 h-72 bg-base-100 shadow-xl image-full" data-aos="fade-right">
+                    <div className="card w-full hover:shadow-xl hover:shadow-zinc-400 h-80 bg-base-100 shadow-xl image-full" data-aos="fade-right">
                         <figure><img src={dc} /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-white text-3xl font-bold">DC COMICS</h2>
